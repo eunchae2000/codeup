@@ -1,161 +1,172 @@
-# 1061 입력된 정수 두 개를 비트단위로 OR 연산한 후 그 결과를 정수로 출력
-
+# 1071 0 입력될 때 까지 무한 출력하기1
 """
-a, b = input().split(" ")
-x = int(a)
-y = int(b)
+a = map(int, input().split())
+a_list = list(a)
 
-print(x|y)
+for i in a_list:
+  if i != 0:
+    print(i)
+  else:
+    break
+ """
+# 1072 정수 입력받아 계속 출력하기
 """
+a1 = int(input())
+a2 = map(int, input().split())
 
+a2_list = list(a2)
 
-# 1062 입력된 정수 두 개를 비트단위로 XOR 연산한 후 그 결과를 정수로 출력
+for i in a2_list:
+  if a1 < len(a2_list):
+    break
+  else:
+    print(i)
 
-"""
-a, b = input().split(" ")
-x = int(a)
-y = int(b)
+    or
 
-print(x^y)
-"""
-
-
-# 1063 입력된 두 정수 a, b 중 큰 값을 출력
-
-"""
-a, b = input().split()
-x = int(a)
-y = int(b)
-
-print(x if x>y else y)
-"""
-
-
-# 1064 입력된 세 정수 a, b, c 중 가장 작은 값을 출력
-
-"""
-a, b, c = input().split(" ")
-
-x = int(a)
-y = int(b)
-z = int(c)
-
-print(min(x, y, z))
+a1 = int(input())
+a2 = input().split()
+for i in a2:
+  print(i)
 """
 
-
-# 1065 세 정수 a, b, c가 입력되었을 때, 짝수만 출력
-
+# 1073 0이 입력될 때 까지 무한 출력하기2
 """
-a, b, c = input().split()
-x = int(a)
-y = int(b)
-z = int(c)
-    # 더 간단하게 => a, b, c = map(int, input().split())
+a = map(int, input().split())
+a_list = list(a)
 
-if x % 2 == 0:
-  print(x)
-if y % 2 == 0:
-  print(y)
-if z % 2 == 0:
-  print(z)
+for i in a_list:
+  if i != 0:
+    print(i)
+  else:
+    break
+
+  or
+
+b = input().split()
+for x in b:
+  if x!= '0':
+    print(x)
+  else:
+    break
 """
-
-
-# 1066 세 정수 a, b, c가 입력되었을 때, 짝/홀을 출력
-
-"""
-a, b, c = map(int, input().split())
-
-if a % 2 == 0:
-  print("even")
-else:
-  print("odd")
-
-if b % 2 == 0:
-  print("even")
-else:
-  print("odd")
-
-if c % 2 == 0:
-  print("even")
-else:
-  print("odd")
-
-# for i in a:
-#   if i % 2 == 0:
-#       print("even")
-#   else:
-#       print("odd")
-"""
-
-
-# 1067 정수 1개가 입력되었을 때, 음/양과 짝/홀을 출력
-
+# 1074 정수 1개 입력받아 카운트다운 출력하기 1 => 입력한 수 포함 1까지 출력
 """
 a = int(input())
 
-if a>0:
-  if(a%2==0):
-    print(plus)
-    print("even")
-  else:
-    print("odd")
-else:
-  if(a%2==0):
-    print("minus")
-    print("even")
-  else:
-    print("odd")
-"""
-
-
-# 1068 점수(정수, 0~100)를 입력받아 평가를 출력
-
-"""
-a = int(input())
-
-if(90<=a<=100):
-  print("A")
-elif(70<=a<90):
-  print("B")
-elif(40<=a<70):
-  print("C")
-elif(0<=a<40):
-  print("D")
-"""
-
-
-# 1069 평가를 문자(A, B, C, D, ...)로 입력받아 다르게 출력
-
-"""
-a = str(input()) # 문자열로 입력을 받아야 하기 때문에 chr은 타입변환이 불가능
-
-if(a == "A"):
-  print("best!!!")
-elif(a == "B"):
-  print("good!!")
-elif(a == "C"):
-  print("run!")
-elif(a == "D"):
-  print("slowly~")
-else:
-  print("what?")
+while a >= 1:
+  print(a)
+  a = a - 1
   """
-
-
-# 1070 월이 입력될 때 계절 이름이 출력
-
+# 1075 정수 1개 입력받아 카운트다운 출력하기 2 => 입력한 수를 포함하지 않고 0까지 출력
 """
 a = int(input())
 
-if(a == 12 or a == 1 or a == 2):
-  print("winter")
-elif(a == 3 or a== 4 or a == 5):
-  print("spring")
-elif(a == 6 or a == 7 or a == 8):
-  print("summer")
-elif(a == 9 or a == 10 or a == 11):
-  print("fall")
+while a >= 0:
+  a = a - 1
+  print(a)
 
+  or
+
+a = input()
+b = int(a)
+
+while b>0:
+  b -= 1
+  print(b)
+  """
+# 1076 문자 1개 입력받아 알파벳 출력하기
+"""
+a = input()
+a1 = ord(a)     # string 형태로 바꾸기
+a2 = ord('a')
+
+while a2<a1:
+  print(chr(a2), end = ' ')
+  a2 += 1
+"""
+# 1077 정수 1개 입력받아 그 수까지 출력하기
+"""
+a = int(input())
+
+i = 0
+
+while i <= a:
+  print(i)
+  i += 1
+
+  or
+
+a = input()
+b = int(a)
+
+for i in range(b+1):
+  print(i)
+"""
+# 1078 짝수 합 구하기
+"""
+a = int(input())
+b = 0
+
+for i in range(a + 1):
+  if i % 2 == 0:
+    b += i
+print(b)
+
+or
+
+a = int(input())
+a1 = 0
+
+for i in range(1, a+1):
+  if(i % 2 == 0):
+    a1 += i
+
+print(a1)
+"""
+# 1079 원하는 문자가 입력될 때까지 반복 출력하기
+"""
+a = input().split()
+
+for i in a:
+  print(i)
+  if i == 'q':
+    break
+
+  or
+
+a = input().split()
+
+alist = list(a)
+
+last = alist.index('q')
+
+for i in alist[:last + 1]:
+  print(i)
+"""
+# 1080 언제까지 더해야 할까?  => 1, 2, 3,... 을 계속 더해 나갈 때,
+# # 그 합이 입력한 정수(0~1000)보다 같거나 작을 때까지 계속 더하는 프로그램 작성
+"""
+a = int(input())
+i = 0
+j = 0
+
+while j<a:
+  i += 1
+  j += i
+
+print(i)
+
+or
+
+a = int(input())
+i = 1
+sum = 0
+
+while True:
+  sum += i
+  if sum >= a:
+    print(i)
+    break
+  i += 1
 """
