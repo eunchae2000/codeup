@@ -1,172 +1,114 @@
-# 1071 0 입력될 때 까지 무한 출력하기1
+# 1081 주사위를 2개 던지면?
+
 """
-a = map(int, input().split())
-a_list = list(a)
+a, b = map(int, input().split())
 
-for i in a_list:
-  if i != 0:
-    print(i)
-  else:
-    break
- """
-# 1072 정수 입력받아 계속 출력하기
-"""
-a1 = int(input())
-a2 = map(int, input().split())
-
-a2_list = list(a2)
-
-for i in a2_list:
-  if a1 < len(a2_list):
-    break
-  else:
-    print(i)
-
-    or
-
-a1 = int(input())
-a2 = input().split()
-for i in a2:
-  print(i)
+for i in range(1, a+1):
+  for j in range(1, b+1):
+    print(i, j)
 """
 
-# 1073 0이 입력될 때 까지 무한 출력하기2
+# 1082 16진수 구구단?
+
 """
-a = map(int, input().split())
-a_list = list(a)
+print("16진수를 입력하세요.")
+a = int(input(), 16)
+b = hex(a)[2].upper()
 
-for i in a_list:
-  if i != 0:
-    print(i)
-  else:
-    break
-
-  or
-
-b = input().split()
-for x in b:
-  if x!= '0':
-    print(x)
-  else:
-    break
+for i in range(1, 16):
+  c = hex(a*i)[2:].upper()
+  d = hex(i)[2:].upper()
+  print(b+" * "+d+" = "+c)
 """
-# 1074 정수 1개 입력받아 카운트다운 출력하기 1 => 입력한 수 포함 1까지 출력
+
+# 1083 3 6 9 게임의 왕이 되자
+
 """
 a = int(input())
 
-while a >= 1:
-  print(a)
-  a = a - 1
-  """
-# 1075 정수 1개 입력받아 카운트다운 출력하기 2 => 입력한 수를 포함하지 않고 0까지 출력
+for i in range(1, a+1):
+  if(i % 3 == 0):
+    print("X", end = " ")
+  else:
+    print(i, end = " ")
 """
-a = int(input())
 
-while a >= 0:
-  a = a - 1
-  print(a)
+# 1084 빛 섞어 색 만들기
 
-  or
-
-a = input()
-b = int(a)
-
-while b>0:
-  b -= 1
-  print(b)
-  """
-# 1076 문자 1개 입력받아 알파벳 출력하기
 """
-a = input()
-a1 = ord(a)     # string 형태로 바꾸기
-a2 = ord('a')
+a, b, c = map(int, input().split(" "))
+count = 0
 
-while a2<a1:
-  print(chr(a2), end = ' ')
-  a2 += 1
+for i in range(a):
+  for j in range(b):
+    for k in range(c):
+      print(i, j, k)
+      count += 1
+print(count)
 """
-# 1077 정수 1개 입력받아 그 수까지 출력하기
+
+# 1085 소리 파일 저장용량 계산하기
+
 """
-a = int(input())
+a, b, c, d = map(int, input().split())
+aa = (a*b*c*d)/8/1024/1024    => MB 단위로 바꿔주기 위해서 1024 계산
 
-i = 0
-
-while i <= a:
-  print(i)
-  i += 1
-
-  or
-
-a = input()
-b = int(a)
-
-for i in range(b+1):
-  print(i)
+print(round(aa, 1), 'MB')   => round 함수는 반올림 함수로 소수점 첫째자리까지 반올림 한다는 것
 """
-# 1078 짝수 합 구하기
+
+# 1086 그림 파일 저장용량 계산하기
+
+"""
+a, b, c = map(int, input().split())
+x = (a*b*c)/8/1024/1024
+
+print(round(x, 2), 'MB')
+"""
+
+# 1087 여기까지! 이제 그만~
+
 """
 a = int(input())
 b = 0
-
-for i in range(a + 1):
-  if i % 2 == 0:
-    b += i
+for i in range(1, a):
+  b += i
+  if b>=a:
+    break
+  else:
+    i += i
 print(b)
-
-or
-
-a = int(input())
-a1 = 0
-
-for i in range(1, a+1):
-  if(i % 2 == 0):
-    a1 += i
-
-print(a1)
 """
-# 1079 원하는 문자가 입력될 때까지 반복 출력하기
-"""
-a = input().split()
 
-for i in a:
-  print(i)
-  if i == 'q':
-    break
+# 1088 3의 배수는 통과?
 
-  or
-
-a = input().split()
-
-alist = list(a)
-
-last = alist.index('q')
-
-for i in alist[:last + 1]:
-  print(i)
-"""
-# 1080 언제까지 더해야 할까?  => 1, 2, 3,... 을 계속 더해 나갈 때,
-# # 그 합이 입력한 정수(0~1000)보다 같거나 작을 때까지 계속 더하는 프로그램 작성
 """
 a = int(input())
-i = 0
-j = 0
 
-while j<a:
-  i += 1
-  j += i
+for i in range(a+1):
+  if i % 3 == 0:
+    continue
+  else:
+    print(i, end=' ')
+"""
 
-print(i)
+# 1089 수 나열하기1
 
-or
+"""
+a, b, c = map(int, input().split())
 
-a = int(input())
-i = 1
-sum = 0
+for i in range(c+1):
+  j = a + (i - 1) * b
+print(j)
+"""
 
-while True:
-  sum += i
-  if sum >= a:
-    print(i)
-    break
-  i += 1
+# 1090 수 나열하기2
+
+"""
+a, b, c = map(int, input().split())
+for i in range(c+1):
+  if b != 0:
+    y = a*b**(i-1)
+  else:
+    y = 0
+print(y)
 """
