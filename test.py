@@ -1,68 +1,83 @@
-# 1102 Hello, World! 두 줄로 출력
-
-"""
-print("Hello \nWorld!")
-"""
-
-# 1103 파일명 출력( ", \ 그대로 출력되야 함)
-
-"""
-print('"C:\\test"')
-"""
-
-# 1104
-# 1105
-
-# 1106 int의 범위 출력
-
-"""
-a = -2147483648
-b = 2147483647
-
-print("int의 범위는", end = " ")
-print(a, b)
-"""
-
-# 1107 반복 출력하기 1
-
-"""
-a = "print"
-
-for i in range(50):
-  print(a)
-"""
-
-# 1108 반복 출력하기 2
-
-"""
-a = "Hello"
-b = "World"
-
-for i in range(20):
-  print(a, end = " ")
-for j in range(30):
-  print(b, end = " ")
-"""
-
-# 1109 보안카드 접수중
-
-"""
-name = str(input())
-age = int(input())
-code = str(input())
-Key_Num = float(input())
-
-print("--------")
-print(name)
-print(age)
-print(code)
-print(Key_Num)
-"""
-
-# 1110 정수 그대로 출력하기
+# 1111 % 출력
 
 """
 a = int(input())
 
-print(a)
+print(a,'%')
+"""
+
+# 1112 두 정수 출력
+
+"""
+a, b = map(int, input().split())
+print(a, b)
+"""
+
+# 1113 바꿔서 출력하기
+
+"""
+a, b = map(int, input().split())
+print(b, a)
+"""
+
+# 1114 두 정수의 덧셈
+
+"""
+a, b = map(int, input().split())
+c = a+b
+print(c)
+"""
+
+# 1115 두 정수의 덧셈(int 범위 보다 큼)
+
+"""
+a, b = map(int, input().split())
+c = a+b
+print(c)
+"""
+
+# 1116 사칙연산 계산기
+
+"""
+a, b = map(int, input().split())
+
+print("%d + %d = %d" %(a, b, a+b))
+print("%d - %d = %d" %(a, b, a-b))
+print("%d X %d = %d" %(a, b, a*b))
+print("%d / %d = %d" %(a, b, a/b))
+"""
+
+# 1117 두 실수의 곱
+
+"""
+a, b = map(float, input().split())
+
+print("%.2f" % (a*b))
+"""
+
+# 1118 삼각형의 넓이 구하기
+
+"""
+a, b = map(int, input().split())
+c = (a*b)/2
+
+print("%.1f" %c)
+"""
+
+# 1119 일을 시간으로 변환
+
+"""
+a  = int(input())
+b = a*24
+
+print(b)
+"""
+
+# 1120 세 수의 평균
+
+"""
+a, b, c = map(int, input().split())
+x = (a+b+c)/3
+
+print("%.2f" %x)
 """
