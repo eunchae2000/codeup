@@ -1,94 +1,60 @@
-# 1131 문자 출력하기
+# 1143 비트 연산자 (AND)
 
 """
-a = str(input())
+a, b = map(int, input().split())
+c = a&b
 
-print(a)
+print(c)
 """
 
-# 1132 문자열 출력하기
+# 1144 비트 연산자 (OR)
 
 """
-a = str(input())
+a, b = map(int, input().split())
+c = a|b
 
-print(a)
+print(c)
 """
 
-# 1133 공백이 있는 문자열 입출력
+# 1147 비트 연산자 (<<)
 
 """
-a, b, c = input().split()
+a, b = map(int, input().split())
+c = a<<b
 
-print(a, b, c)
+print(c)
 """
 
-# 1135 관계 연산자 1
+# 1148 비트 연산자 (>>)
+
+"""
+a, b = map(int, input().split())
+c = a>>b
+print(c)
+"""
+
+# 1149 두 수 중 큰 수
 
 """
 a, b = map(int, input().split())
 if a>b:
-    print("1")
+    print(a)
 else:
-    print("0")
+    print(b)
 """
 
-# 1136 관계 연산자 2
+# 1150 세 수 중 가장 작은 수
 
 """
-a, b = map(int, input().split())
-if (a==b):
-    print("1")
-else:
-    print("0")
-"""
-
-# 1137 관계 연산자 3
-
-"""
-a, b = map(int, input().split())
-if (a!=b):
-    print("1")
-else:
-    print("0")
-"""
-
-# 1138 논리 연산자(NOT)
-
-"""
-a = int(input())
-if (a==1):
-    print("0")
-elif (a==0):
-    print("1")
-else:
-    print("0 또는 1만 입력하세요.")
-"""
-
-# 1139 논리 연산자(AND)
-
-"""
-a, b = map(int, input().split())
-if ((a == 1) and (b == 1)):
-    print("1")
-elif((a == 0) and (b == 1)):
-    print("0")
-elif((a == 1) and (b == 0)):
-    print("0")
-elif((a == 0) and (b == 0)):
-    print("0")
-else:
-    print("입력을 확인해 주세요.")
-"""
-
-# 1140 논리 연산자(OR)
-
-"""
-a, b= map(int, input().split())
-
-if ((a==1) or (b==1)):
-    print("1")
-elif ((a==0) and (b==0)):
-    print("0")
-else:
-    print("숫자를 확인해 주세요.")
+a, b, c = map(int, input().split())
+if a>b:
+    if b<c:
+        print(b)
+    elif c<b:
+        print(c)
+elif a<b:
+    if a<c:
+        print(a)
+    elif a>c:
+        print(c)
 """
