@@ -1,109 +1,144 @@
-# 1151 10보다 작은 수
-
-"""
-a = int(input())
-if a<10:
-    print("small")
-"""
-
-# 1152 10보다 작은 수
-
-"""
-a = int(input())
-if a>10:
-    print("big")
-elif a<10:
-    print("small")
-else:
-    print("very big")
-"""
-
-# 1153 두 수의 대수 비교
+# 1161 홀수와 짝수 그리고 더하기
 
 """
 a, b = map(int, input().split())
-if a>b:
-    print(">")
-elif a<b:
-    print("<")
-elif a==b:
-    print("=")
-else:
-    print("수를 확인해 주세요")
-"""
-
-# 1154 큰수 - 작은수
-
-"""
-a, b = map(int, input().split())
-if a>b:
-    print(a-b)
-elif a<b:
-    print(b-a)
-elif a==b:
-    print("0")
-else:
-    print("수를 확인해 주세요")
-"""
-
-# 1155 7의 배수
-
-"""
-a = int(input())
-if a%7==0:
-    print("multiple")
-else:
-    print("not multiple")
-"""
-
-# 1156 홀수 짝수 구별
-
-"""
-a = int(input())
 if a%2==0:
-    print("even")
+    if b%2==0:
+        print("짝수 + 짝수 = 짝수")
+    else:
+        print("짝수 + 홀수 = 홀수")
 else:
-    print("odd")
+    if b%2==0:
+        print("홀수 + 짝수 = 홀수")
+    else:
+        print("홀수 + 홀수 = 짝수")
 """
 
-# 1157 특별한 공 던지기 1
+# 1162 당신의 사주를 봐 드립니다 1 => 년-월+일 => 마지막의 숫자가 0이면 "대박"을 출력, 그렇지 않으면 "그럭저럭"을 출력
+
+"""
+a, b, c = map(int, input().split(" "))
+if ((a-b+c)%10==0):
+    print("대박")
+else:
+    print("그럭저럭")
+"""
+
+# 1163 당신의 사주를 봐 드립니다 2
+
+"""
+y, m, d = map(int, input().split())
+n = int(y+m+d) % 1000
+n = int(n / 100)
+
+if n%2==0:
+    print("대박")
+else:
+    print("그럭저럭")
+"""
+
+# 1164 터널 통과하기 1
+
+"""
+a, b, c = map(int, input().split())
+if (a<=170 and b<=170 and c<=170):
+    print("PASS")
+else:
+    print("CRASH")
+"""
+
+# 1165 축구의 신 1
+
+"""
+a, b = map(int, input().split())
+c = 90-a
+d = c/5
+e = c%5
+print("%.0f"%(b+d+e))
+"""
+
+# 1166 윤년 판별
 
 """
 a = int(input())
-if a>50 and a<60:
-    print("win")
+if ((a%4==0) and (a%100!=0)):
+    print("YES")
+elif (a%400==0):
+    print("YES")
 else:
-    print("lose")
+    print("NO")
 """
 
-# 1158 특별한 공 던지기 2
+# 1167 두 번째로 작은 수
+
+"""
+a, b, c = map(int, input().split())
+if a>b:
+    if b>c:
+        print(b)
+    elif a<c:
+        print(a)
+    else:
+        print(c)
+elif b>c:
+    if a>b:
+        print(b)
+    elif c>a:
+        print(a)
+    else:
+        print(c)
+elif a>c:
+    if a<b:
+        print(a)
+    elif b>c:
+        if a>b:
+            print(b)
+        else:
+            print(a)
+    else:
+        print(c)
+"""
+
+# 1168 나이 계산 1
+
+"""
+birth, gender = input().split()
+gender = int(gender)
+
+if (gender == 1):
+    birthday = int('19' + birth[0:2])
+    print(2021 - birthday + 1)
+elif (gender == 2):
+    birthday = int('19' + birth[0:2])
+    print(2021 - birthday + 1)
+elif (gender == 3):
+    birthday = int('20' + birth[0:2])
+    print(2021 - birthday + 1)
+elif (gender == 4):
+    birthday = int('20' + birth[0:2])
+    print(2021 - birthday + 1)
+else:
+    print("숫자를 확인해 주세요")
+"""
+
+# 1169 나이 계산 2
 
 """
 a = int(input())
-if (a>=30 and a<=40) or (a>=60 and a<=70):
-    print("win")
+if (a>22):
+    b = str(2021 - a)
+    print(int(b[2:4]), 1)
 else:
-    print("lose")
+    b = str(2021 - a)
+    print(int(b[2:4]), 3)
 """
 
-# 1159 특별한 공 던지기 3
+# 1170 당신의 학번은? 1
 
 """
-a = int(input())
-if (a>=50 and a<=70) or (a%6==0):
-    print("win")
+a, b, c = map(int, input().split())
+if c<10:
+    print(str(a,b,"0",c))
 else:
-    print("lose")
-"""
-
-# 1160 아르바이트 가는 날
-
-"""
-a = int(input())
-if (a==1 or a==3 or a==5):
-    print("Oh my god")
-elif (a==2 or a==4 or a==6 or a==7):
-    print("enjoy")
-else:
-    print("날짜를 확인해 주세요")
+    print(str(a,b,c))
 """
