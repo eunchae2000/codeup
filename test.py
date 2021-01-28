@@ -1,79 +1,133 @@
-# 1212 삼각형의 성립 조건
+# 1224 분수 크기 비교
 
 """
-a, b, c = map(int, input().split())
-if (a<b+c):
-    print("yes")
-elif (b<a+c):
-    print("yes")
-elif (c<a+b):
-    print("yes")
+print("분자/분모 순으로 각각 하나씩 입력해 주세요")
+
+a, b, c, d = map(int, input().split())
+ab = float(a/b)
+cd = float(c/d)
+
+if (ab>cd):
+    print(">")
+elif (ab == cd):
+    print("=")
+elif (ab < cd):
+    print("<")
 else:
-    print("No")
+    print("분수를 다시 확인해 주세요")
 """
 
-# 1214 이 달은 며칠까지 있을까?
-
+# 1226 이번 주 로또
 """
-year, month = map(int, input().split())
-if (month==1 or month==3 or month== 5 or month==7 or month==8 or month==10 or month==12):
-    print("31")
-elif (month==4 or month==6 or month==9 or month==11):
-    print("30")
-elif (month==2):
-    if(year%400==0):
-        if(year%4==0 and year%100!=0):
-            print("29")
+result = list(map(int, input().split()))
+me = list(map(int, input().split()))
+sum1 = 0
+
+for i in me:
+    if(result[i] == me[i]):
+        sum1 = sum1 + 1
+
+if(sum1==6):
+    print("1")
+elif(sum1==5):
+    if (result[6] == me[5]):
+        print("2")
     else:
-        print("28")
-else:
-    print("연도와 월을 확인해 주세요")
+        print("3")
+elif(sum1==4):
+    print("4")
+elif(sum1==3):
+    print("5")
+elif(sum1<=2):
+    print("0")
 """
 
-# 1216 컨설팅 회사
+# 1228 비만도 측정1
+
+"""
+cm, weight = map(float, input().split())
+result1 =  float(cm-100) * 0.9
+result2 =  float((weight-result1) * 100 / result1)
+
+if(result2<=10):
+    print("정상")
+elif(result2>=10 and result2<=20):
+    print("과체중")
+elif(result2>20):
+    print("비만")
+"""
+
+# 1229 비만도 측정2
+
+"""
+cm, weight = map(int, input().split())
+result = 0
+sum1 = 0
+
+if (cm<150):
+    result = cm - 150
+    sum1 = (weight - result) * 100 / result
+elif (cm>=150 and cm<160):
+    result = (cm - 150) / 2 + 50
+    sum1 = (weight - result) * 100 / result
+elif (cm>=160):
+    result = (cm - 100) * 0.9
+    sum1 = (weight - result) * 100 / result
+else:
+    print("키와 몸무게를 확인해 주세요")
+
+if (sum1<=10):
+    print("정상")
+elif(sum1>10 and sum1<=20):
+    print("과제중")
+else:
+    print("비만")
+"""
+
+# 1230 터널 통과하기
 
 """
 a, b, c = map(int, input().split())
-if (a > b-c):
-    print("do not advertise")
-elif (a < b-c):
-    print("advertise")
-elif (a == b-c):
-    print("does not matter")
+if (170 < a and 170 < b and 170 < c):
+    print("PASS")
+elif (170 >= a or 170>= b or 170 >= c):
+    print("CRASH", end = " ")
+    if (170>=a):
+        print(a)
+    elif (170>=b):
+        print(b)
+    elif (170>=c):
+        print(c)
+    else:
+        print( )
 else:
-    print("이익을 다시 확인하세요")
+    print("터널 높이를 확인해 주세요")
 """
 
-# 1218 삼각형 판단하기
-
+# 1231 계산기1
 """
-print("삼각형의 3변의 길이를 입력하세요 단, a <= b <= c")
-a, b, c = map(int, input().split())
+abc = input()
+sum1 = 0
+sum2 = 0
+result = 0
 
-if (a==b==c):
-    print("정삼각형")
-elif (a==b or a==c or b==c):
-    print("이등변삼각형")
-elif (a*a + b*b == c*c):
-    print("직각삼각형")
-elif (a<= b<= c):
-    print("삼각형")
-else:
-    print("삼각형이 아님")
-"""
+for i in range(len(abc)):
+    if (abc[i] == '+'):
+        sum1 = int(abc[:i])
+        sum2 = int(abc[i+1:])
+        result = sum1 + sum2
+    elif (abc[i] == '-'):
+        sum1 = int(abc[:i])
+        sum2 = int(abc[i+1:])
+        result = sum1 - sum2
+    elif (abc[i] == 'x'):
+        sum1 = int(abc[:i])
+        sum2 = int(abc[i+1:])
+        result = sum1 * sum2
+    elif (abc[i] == '/'):
+        sum1 = int(abc[:i])
+        sum2 = int(abc[i+1:])
+        result = sum1 / sum2
 
-# 1222 축구의 신2
-
-"""
-print("현재 경기 타임, 1반 득점, 2반 득점 순으로 입력해 주세요.")
-time, score1, score2 = map(int, input().split())
-score = (90-time)/5
-if (score1+score > score2):
-    print("win")
-elif (score1+score == score2):
-    print("same")
-elif (score+score1<score2):
-    print("lose")
-else:
-    print("득점을 다시 확인해 주세요")
+print(result)
 """
