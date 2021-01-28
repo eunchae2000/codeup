@@ -1,4 +1,3 @@
-
 # 1226 이번 주 로또
 
 result = list(map(int, input().split()))
