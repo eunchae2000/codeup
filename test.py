@@ -1,28 +1,99 @@
-# 1226 이번 주 로또
+# 1251 1부터 100까지 출력하기
 
-result = list(map(int, input().split()))
-me = list(map(int, input().split()))
+"""
+for i in range(1, 101):
+    print(i)
+"""
+
+# 1252 1부터 n까지 출력하기
+
+"""
+n = int(input())
+for i in range(1, n+1):
+    print(i)
+"""
+
+# 1253 a부터 b까지 출력하기
+
+"""
+a, b = map(int, input().split())
+
+if (a<b):
+    for i in range(a, b+1):
+        print(i)
+else:
+    print("수를 확인해 주세요")
+"""
+
+# 1254 알파벳 출력하기
+
+"""
+
+a, b = map(ord, input().split())
+
+if a<b:
+    for i in range(a, b+1):
+        print(chr(i))
+"""
+
+# 1255 두 실수 사이 출력하기
+"""
+a, b = map(float, input().split())
+
+if (a<b):
+    for i in range(a, b, 0.01):
+        print("%.2f" %i)
+"""
+
+# 1256 별 출력하기
+
+"""
+n = int(input())
+for i in range(n):
+    print("*", end = "")
+"""
+
+# 1257 두 수 사이의 홀수 출력하기
+
+"""
+a, b = map(int, input().split())
+for i in range(a, b+1):
+    if (i%2!=0):
+        print(i, end = " ")
+ """
+
+# 1258 1부터 n까지 합 구하기
+
+"""
+n = int(input())
+sum = 0
+
+for i in range(1, n+1):
+    sum += i
+    
+print(sum)
+"""
+
+# 1259 1부터 n가지 중 짝수의 합 구하기
+
+"""
+n = int(input())
 sum1 = 0
-bonus = result[6]
+for i in range(1, n+1):
+    if i%2==0:
+        sum1 += i
 
-for i in range(0, len(me)):
-    if(result[i] == me[i]):
-        sum1 = sum1 + 1
-if(sum1==6):
-    print("1")
-elif(sum1==5):
-    for i in range(0, len(me)):
-        if (bonus == me[i]):
-            sum1 = sum1 + 1
-        else:
-            sum1 = sum1
-    if(sum1 == 5):
-        print("3")
-    elif(sum1 == 6):
-        print("2")
-elif(sum1==4):
-    print("4")
-elif(sum1==3):
-    print("5")
-elif(sum1<=2):
-    print("0")
+print(sum1)
+"""
+
+# 1260 3의 배수의 합
+
+"""
+a, b = map(int, input().split())
+summ = 0
+for i in range(a, b+1):
+    if (i%3==0):
+        summ += i
+
+print(summ)
+"""
