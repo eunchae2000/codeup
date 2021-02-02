@@ -1,121 +1,178 @@
-# 1271 최대값 구하기
-"""
-n = int(input())
-num = list(map(int, input().split()))
-num_max = 0
+# 1281 홀수는 더하고 짝수는 빼고 3
 
-for i in num:
-    if(i>num_max):
-        num_max = i
-
-print(num_max)
-"""
-
-# 1272 기부
 """
 a, b = map(int, input().split())
+sum1 = 0
+for i in range(a, b+1):
+    if(i%2==0):
+        sum1 -= i
+        i = '- '+str(i)
+        print(i, end = " ")
+    else:
+        if(a==i):
+            sum1 += i
+            print(str(i), end = " ")
+        else:
+            sum1 += i
+            i = '+ '+str(i)
+            print(i, end = " ")
+
+print("= " + str(sum1))
+"""
+
+# 1282 제곱수 만들기
+
+"""
+import math
+n = int(input())
+
+for i in range(1, n+1):
+    t = math.sqrt(n-i)
+    if t == round(t, 1):
+        print(i, int(t))
+        break
+"""
+
+# 1283 주식 투자
+
+"""
+won = int(input())
+day = int(input())
+p = list(map(int, input().split()))
+
+result = won
+a = " "
+
+for i in p:
+    won += won*(i/100)
+
+if(won-result>0):
+    a = "good"
+elif(won-result == 0):
+    a = "same"
+else:
+    a = "bad"
+print("------------")
+print(round(won-result))
+print(a)
+"""
+
+# 1284 암호 해독
+
+"""
+num = int(input())
+for i in range(1, 10):
+    for j in range(1, 10):
+        if(i*j==num):
+            if(i>j):
+                print(j, i)
+            elif(i==j):
+                print(i, j)
+            else:
+                print("Wrong Number")
+"""
+
+# 1285 계산기 2
+
+"""
+expression = input()
+result = 0
+symbol = ''
+lastNumber = 0
+lsatSymbol = ''
+lastIndex = 0
+isFirst = True
+
+for i in range(0, len(expression)):
+    if expression[i] in ('+', '-', '*', '/', '='):
+        symbol = expression[i]
+        number = int(expression[lastIndex:i])
+        lastIndex = i+1
+
+        if isFirst:
+            isFirst = False
+            result += int(number)
+            lastNumber = number
+            lsatSymbol = symbol
+            continue
+
+        if lsatSymbol == '+':
+            result += number
+            result = int(result)
+        elif lsatSymbol == '-':
+            result -= number
+            result = int(result)
+        elif lsatSymbol == '*':
+            result *= number
+            result = int(result)
+        elif lsatSymbol == '/':
+            result /= number
+            result = int(result)
+
+        lsatSymbol = symbol
+
+print(int(result))
+"""
+
+# 1286 최댓값, 최솟값
+
+"""
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
+
+print(max(a, b, c, d, e), min(a, b, c, d, e))
+"""
+
+# 1287 구구단을 *로 출력하기
+
+"""
+a = int(input())
+sum1 = 1
+for i in range(1, 10):
+    for j in range(0, i*a):
+        print("*", end = " ")
+    print(" ")
+"""
+
+# 1288 nCr(Tiny)
+
+"""
+n, c = map(int, input().split())
+
+def factorial(n):
+    if n==1 or n==0:
+        return 1
+    else:
+        return n* factorial(n-1)
+
+print(int(factorial(n)/(factorial(c)*factorial(n-c))))
+"""
+
+# 1289 가장 큰 운동장
+
+"""
+large = 0
+
+for i in range(3):
+    a, b = map(int, input().split())
+    if(large<a*b):
+        large = a*b
+
+print(large)
+"""
+
+# 1290 대금 만들기
+
+"""
+a = int(input())
 result = 0
 
-if(a%2==0):
-    result += (a//2*10)
-else:
-    result += (a//2+1)
-
-if (b%2==0):
-    result += (b//2*10)
-else:
-    result += (b//2+1)
+for i in range(1, a):
+    if(a%i==0):
+        result += 1
 
 print(result)
-"""
-# 1273 약수 구하기
-"""
-n = int(input())
-for i in range(1, n+1):
-    if(n%i==0):
-        print(i, end = " ")
-"""
-# 1274 소수 판별
-"""
-n = int(input())
-num = []
-
-for i in range(2, n):
-    if (n%i==0):
-        print("not prime")
-        break
-    else:
-        print("prime")
-        break
-"""
-# 1275 제곱 구하기
-"""
-n, k = map(int, input().split())
-sum1 = 1    # 제곱값으로 증가하기 때문에 시작값이 0이면 안됨
-
-for i in range(k):
-    sum1 *= n
-
-print(sum1)
-"""
-# 1276 팩토리얼 계산
-"""
-n = int(input())
-result = 1
-
-for i in range(1, n+1):
-    result *= i
-
-print(result)
-"""
-# 1277 몇 번째 데이터 출력하기
-"""
-n = int(input())
-a = list(map(int, input().split()))
-
-print(a[0], a[n//2], a[-1])
-"""
-# 1278 자릿수 계산
-"""
-n = int(input())
-
-if(n/1 >= 1):
-    if(n/10 >= 1):
-        if(n/100 >= 1):
-            print("3 자릿수")
-        else:
-            print("2 자릿수")
-    else:
-        print("1 자릿수")
-"""
-# 1279 홀수는 더하고 짝수는 빼고 1
-"""
-a, b = map(int, input().split())
-sum1 = 0
-
-for i in range(a, b+1, 1):
-    if(i%2==0):
-        sum1 -= i
-    else:
-        sum1 += i
-
-print(sum1) 
-"""
-# 1280 홀수는 더하고 짝수는 빼고 2
-"""
-a, b = map(int, input().split())
-sum1 = 0
-ii = ""
-
-for i in range(a, b+1, 1):
-    if(i%2==0):
-        sum1 -= i
-        ii = ' +'+str(i)
-        print(ii, end = "")
-    else:
-        sum1 += i
-        ii = ' -'+str(i)
-        print(ii, end = "")
-
-print(' = ' + str(sum1))
 """
