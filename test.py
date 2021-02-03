@@ -33,7 +33,7 @@ a = list(map(int, input().split(" ")))
 print(max(a), min(a))
 """
 
-# 1294 시저의 암호2
+# 1294 시저의 암호2 ★
 
 """
 text = input()
@@ -69,7 +69,7 @@ n = int(input())
 print(int((n/4)**2))
 """
 
-# 1297 단면의 최대 넓이
+# 1297 단면의 최대 넓이 ★
 
 """
 n = int(input())
