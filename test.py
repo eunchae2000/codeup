@@ -1,178 +1,133 @@
-# 1281 홀수는 더하고 짝수는 빼고 3
+# 1291 바이러스 백신
 
 """
-a, b = map(int, input().split())
-sum1 = 0
-for i in range(a, b+1):
-    if(i%2==0):
-        sum1 -= i
-        i = '- '+str(i)
-        print(i, end = " ")
-    else:
-        if(a==i):
-            sum1 += i
-            print(str(i), end = " ")
-        else:
-            sum1 += i
-            i = '+ '+str(i)
-            print(i, end = " ")
+a, b, c = map(int, input().split())
 
-print("= " + str(sum1))
-"""
-
-# 1282 제곱수 만들기
-
-"""
-import math
-n = int(input())
-
-for i in range(1, n+1):
-    t = math.sqrt(n-i)
-    if t == round(t, 1):
-        print(i, int(t))
-        break
-"""
-
-# 1283 주식 투자
-
-"""
-won = int(input())
-day = int(input())
-p = list(map(int, input().split()))
-
-result = won
-a = " "
-
-for i in p:
-    won += won*(i/100)
-
-if(won-result>0):
-    a = "good"
-elif(won-result == 0):
-    a = "same"
+if (a >= 3000 and b >= 3000 and c >= 3000):
+    print("백신의 값을 확인해 주세요.")
 else:
-    a = "bad"
-print("------------")
-print(round(won-result))
-print(a)
+    print(min(a, b, c))
 """
 
-# 1284 암호 해독
+# 1292 범인을 잡아라 1
+
+"""
+dna = input()
+sum1 = 0
+
+for i in range(0,len(dna)):
+    sum1 += int(dna[i])
+
+if(sum1%7==4):
+    print("suspect")
+else:
+    print("citizen")
+"""
+
+# 1293 1등과 꼴등
 
 """
 num = int(input())
+a = list(map(int, input().split(" ")))
+
+print(max(a), min(a))
+"""
+
+# 1294 시저의 암호2
+
+"""
+text = input()
+password = ''
+
+for i in range(0, len(text)):
+    if text[i] == ' ':
+        password += text[i]
+    elif ord(text[i]) > 119:
+        if text[i] == 'x':
+            password += 'a'
+        elif text[i] == 'y':
+            password += 'b'
+        elif text[i] == 'z':
+            password += 'c'
+    else:
+        code = ord(text[i]) + 3
+        password += chr(code)
+        
+print(password)
+"""
+
+# 1295 알파벳 대소문자 변환
+
+"""
+alphabat = input()
+print(alphabat.swapcase())  // 대소문자 바꾸는 함수 = swapcase => (사용) 변수명.swapcase()
+"""
+# 1296 직사각형의 최대 넓이
+
+"""
+n = int(input())
+print(int((n/4)**2))
+"""
+
+# 1297 단면의 최대 넓이
+
+"""
+n = int(input())
+a = 0
+b = 0
+
+for i in range(1, int(n/2)):
+    if a < i * (n-i * 2):
+        a = i * (n-i * 2)
+        b = i
+
+print(b)
+"""
+
+# 1298 Ax + By = C (Large)
+
+"""
+a, b, c = map(int, input().split())
+result = 0
+sum1 = ''
+sum2 = ''
+
 for i in range(1, 10):
     for j in range(1, 10):
-        if(i*j==num):
-            if(i>j):
-                print(j, i)
-            elif(i==j):
-                print(i, j)
-            else:
-                print("Wrong Number")
+        result = a*i + b*j
+
+        if(result == c):
+            sum1 = i
+            sum2 = j
+            break
+        
+        else:
+            break
+        print("Not Exist")
+
+print(sum1, sum2)
 """
 
-# 1285 계산기 2
+# 1299 Ax + By = C (small)
 
 """
-expression = input()
+a, b, c = map(int, input().split())
 result = 0
-symbol = ''
-lastNumber = 0
-lsatSymbol = ''
-lastIndex = 0
-isFirst = True
+sum1 = ''
+sum2 = ''
 
-for i in range(0, len(expression)):
-    if expression[i] in ('+', '-', '*', '/', '='):
-        symbol = expression[i]
-        number = int(expression[lastIndex:i])
-        lastIndex = i+1
+for i in range(1, 1000):
+    for j in range(1, 1000):
+        result = a*i + b*j
 
-        if isFirst:
-            isFirst = False
-            result += int(number)
-            lastNumber = number
-            lsatSymbol = symbol
-            continue
+        if(result == c):
+            sum1 = i
+            sum2 = j
+            break
+        
+        else:
+            break
+        print("Not Exist")
 
-        if lsatSymbol == '+':
-            result += number
-            result = int(result)
-        elif lsatSymbol == '-':
-            result -= number
-            result = int(result)
-        elif lsatSymbol == '*':
-            result *= number
-            result = int(result)
-        elif lsatSymbol == '/':
-            result /= number
-            result = int(result)
-
-        lsatSymbol = symbol
-
-print(int(result))
-"""
-
-# 1286 최댓값, 최솟값
-
-"""
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-e = int(input())
-
-print(max(a, b, c, d, e), min(a, b, c, d, e))
-"""
-
-# 1287 구구단을 *로 출력하기
-
-"""
-a = int(input())
-sum1 = 1
-for i in range(1, 10):
-    for j in range(0, i*a):
-        print("*", end = " ")
-    print(" ")
-"""
-
-# 1288 nCr(Tiny)
-
-"""
-n, c = map(int, input().split())
-
-def factorial(n):
-    if n==1 or n==0:
-        return 1
-    else:
-        return n* factorial(n-1)
-
-print(int(factorial(n)/(factorial(c)*factorial(n-c))))
-"""
-
-# 1289 가장 큰 운동장
-
-"""
-large = 0
-
-for i in range(3):
-    a, b = map(int, input().split())
-    if(large<a*b):
-        large = a*b
-
-print(large)
-"""
-
-# 1290 대금 만들기
-
-"""
-a = int(input())
-result = 0
-
-for i in range(1, a):
-    if(a%i==0):
-        result += 1
-
-print(result)
+print(sum1, sum2)
 """
