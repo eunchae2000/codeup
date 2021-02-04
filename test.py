@@ -1,37 +1,3 @@
-# 1291 바이러스 백신
-
-"""
-a, b, c = map(int, input().split())
-
-if (a >= 3000 and b >= 3000 and c >= 3000):
-    print("백신의 값을 확인해 주세요.")
-else:
-    print(min(a, b, c))
-"""
-
-# 1292 범인을 잡아라 1
-
-"""
-dna = input()
-sum1 = 0
-
-for i in range(0,len(dna)):
-    sum1 += int(dna[i])
-
-if(sum1%7==4):
-    print("suspect")
-else:
-    print("citizen")
-"""
-
-# 1293 1등과 꼴등
-
-"""
-num = int(input())
-a = list(map(int, input().split(" ")))
-
-print(max(a), min(a))
-"""
 
 # 1294 시저의 암호2 ★
 
@@ -56,19 +22,6 @@ for i in range(0, len(text)):
 print(password)
 """
 
-# 1295 알파벳 대소문자 변환
-
-"""
-alphabat = input()
-print(alphabat.swapcase())  // 대소문자 바꾸는 함수 = swapcase => (사용) 변수명.swapcase()
-"""
-# 1296 직사각형의 최대 넓이
-
-"""
-n = int(input())
-print(int((n/4)**2))
-"""
-
 # 1297 단면의 최대 넓이 ★
 
 """
@@ -84,50 +37,151 @@ for i in range(1, int(n/2)):
 print(b)
 """
 
-# 1298 Ax + By = C (Large)
+# 1351 구구단 출력하기2
 
 """
-a, b, c = map(int, input().split())
-result = 0
-sum1 = ''
-sum2 = ''
+a, b = map(int, input().split())
+result = 1
 
-for i in range(1, 10):
+for i in range(a, b+1):
     for j in range(1, 10):
-        result = a*i + b*j
-
-        if(result == c):
-            sum1 = i
-            sum2 = j
-            break
-        
-        else:
-            break
-        print("Not Exist")
-
-print(sum1, sum2)
+        result = i*j
+        print(str(i) + " X " + str(j) + " = " + str(result))
+    print(end = "")
 """
 
-# 1299 Ax + By = C (small)
+# 1352 사각형 출력하기 1
 
 """
-a, b, c = map(int, input().split())
-result = 0
-sum1 = ''
-sum2 = ''
+n = int(input())
 
-for i in range(1, 1000):
-    for j in range(1, 1000):
-        result = a*i + b*j
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        print("*", end = "")
+    print()
+"""
 
-        if(result == c):
-            sum1 = i
-            sum2 = j
+# 1353 삼각형 출력하기 1
+
+"""
+n = int(input())
+
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        print("*", end = "")
+        if(j==i):
             break
-        
         else:
-            break
-        print("Not Exist")
+            continue
+    print()
+"""
 
-print(sum1, sum2)
+# 1354 삼각형 출력하기 2
+
+"""
+n = int(input())
+
+for i in range(n+1, 1, -1):
+    for j in range(1, i):
+        print("*", end = "")
+        if(j==i):
+            break
+        else:
+            continue
+    print()
+"""
+
+# 1355 삼각형 출력하기 3
+
+"""
+n = int(input())
+
+for i in range(0, n):
+    for j in range(0, i):
+        print(" ", end = "")
+    for j in range(0, n-i):
+        print("*", end = "")
+    print()
+"""
+
+# 1356 사각형 출력하기 2
+
+"""
+n = int(input())
+
+for i in range(1, n+1):
+    if(i==1 or i==n):
+        for j in range(1, n+1):
+            print("*", end = "")
+        print()
+    else:
+        print("*", end = "")
+        for j in range(2, n):
+            print(" ", end = "")
+        print("*", end = "")
+        print()
+"""
+
+# 1357 삼각형 출력하기 4
+
+"""
+n = int(input())
+for i in range(1, n+1):
+    for j in range(0, i):
+        print("*", end = "")
+    print()
+for i in range(n+1, 1, -1):
+    for j in range(1, i-1):
+        print("*", end = "")
+    print()
+"""
+
+# 1358 삼각형 출력하기 5
+
+"""
+n = int(input())
+
+for i in range(int(n/2), -1, -1):
+    for j in range(0, i):
+        print(' ', end='')
+    for j in range(0, (n - i * 2)):
+        print('*', end='')
+    for j in range(0, i):
+        print(' ', end='')
+    print()
+"""
+
+# 1359 숫자 피라미드 1
+
+"""
+num = int(input())
+n = 1
+
+for i in range(1, num+1):
+    for j in range(1, i+1):
+        print(j, end = "")
+        n += 1
+    print()
+"""
+
+# 1360 숫자 피라미드 2
+
+"""
+num = int(input())
+n = num
+
+for i in range(num, 0, -1):
+    for j in range(i, 0, -1):
+        print(i, end = "")
+    print()
+
+# 다른 버전
+num = int(input())
+n = num
+
+for i in range(num, 0, -1):
+    for j in range(i, 0, -1):
+        print(j, end = "")
+    n -= 1
+    print()
 """
