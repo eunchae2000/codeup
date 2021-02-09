@@ -1,113 +1,146 @@
-# 1382 구구단 출력 (2-5단)
-
-"""
-for i in range(1, 10):
-    for j in range(2, 6):
-        print(str(j) + "X" + str(i) + "=" + str(i*j), end = "")
-        print("\t", end = "")
-    print()
-"""
-
-# 1402 거꾸로 출력하기 3
-
+# 1411 빠진 카드
 """
 n = int(input())
-num = list(map(int, input().split()))
-num.reverse()
+cards = []
+miss = []
 
-for number in num:
-    print(number, end = " ")
+for i in range(1, n+1):
+    cards.append(i)
+
+for i in range(0, n-1):
+    num = int(input())
+    miss.append(num)
+
+for i in miss:
+    cards.remove(i)
+
+print()
+print(cards[0])
 """
-
-# 1403 배열 두번 출력하기
-
-"""
-n = int(input())
-num = list(map(int, input().split()))
-
-for i in num*n:
-    print(i)
-"""
-
-# 1405 숫자 로테이션
-"""
-import collections                  # collections 모듈 => 데이터를 처리하기에 유용한 모듈
-
-n = int(input())
-num = list(map(int, input().split()))
-print("------------------")
-num = collections.deque(num)        # collections.deque는 안에 들어가 있는 원소를 양방향으로 삭제와 삽입
-num.rotate(1)                       # rotate는 num에 들어있는 원소들은 값(1)만큼 회전시켜주는 것
-                                      값이 음수이면 왼쪽으로 회전하고 값이 양수이면 오른쪽으로 회전
-
-for i in range(0, n):
-    num.rotate(-1)
-    for j in num:
-        print(j, end = " ")
-    print()
-"""
-
-# 1406 love
-
-"""
-char = str(input())
-
-if(char == "love"):
-    print("I love you")
-else:
-    print("문자를 다시 확인해 주세요.")
-"""
-
-# 1407 문자열 출력하기 1
-
-"""
-import re           # re모듈은 특정한 패턴과 일치하는 문자열을 '검색', '치환', '제거' 하는 기능을 지원
-                    # 문자열 앞에 r이 붙으면 해당 문자열이 구성된 그대로 문자열로 반환
-string = input()
-print(re.sub(r'\s+', '', string))       # re.sub('패턴', '바꿀문자열', '문자열', 바꿀횟수)
-                                        # re.sub => 특정 문자열을 찾은 뒤 다른 문자열로 바꿔주는 방법
-"""
-
-# 1408 암호처리
-
-"""
-password = input()
-
-str1 = ''
-str2 = ''
-
-for i in range(0, len(password)):
-    asc = ord(password[i]) + 2          # ord는 아스키코드 값으로 변환
-    str1 += chr(asc)
-    asc = int((ord(password[i])*7)%80+48)
-    str2 += chr(asc)
-print("    ")
-print(str1)
-print(str2)
-"""
-
-
-# 1409 기억력 테스트 1
-
-"""
-num = list(map(int, input().split()))
-n = int(input())
-
-print(num[n-1])
-"""
-
-# 1410 올바른 괄호1(괄호 개수 세기)
-
+# 1412 알파벳 개수 출력하기
 """
 string = input()
+alphabets = {
+    'a': 0,
+    'b': 0,
+    'c': 0,
+    'd': 0,
+    'e': 0,
+    'f': 0,
+    'g': 0,
+    'h': 0,
+    'i': 0,
+    'j': 0,
+    'k': 0,
+    'l': 0,
+    'm': 0,
+    'n': 0,
+    'o': 0,
+    'p': 0,
+    'q': 0,
+    'r': 0,
+    's': 0,
+    't': 0,
+    'u': 0,
+    'v': 0,
+    'w': 0,
+    'x': 0,
+    'y': 0,
+    'z': 0
+}
+​
+for i in string:
+    if 97 <= ord(i) <= 122:
+        alphabets[i] += 1
+
+for i in range(97, 122+1):
+    print(chr(i) + ":" + str(alphabets[chr(i)]))
+"""
+
+# 1413 말하는 앵무새
+"""
+string = input()
+
+for i in range(len(string)-1, -1, -1):  # 뒤에서부터 출력되게 하는 것 (반복문, 배열 사용)
+    print(string[i], end = "")
+"""
+# 1414 C언어를 찾아라
+"""
+stirng = input()
+stirng = stirng.upper()
 result1 = 0
 result2 = 0
 
-for i in range(len(string)):
-    if(string[i] == "("):
-        result1 += 1
-    elif(string[i] == ")"):
-        result2 += 1
+for i in range(len(stirng)):
+    if(stirng[i] == 'C'):
+        result1+=1
+        if(i != len(stirng)-1 and stirng[i+1] == 'C'):
+            result2+=1
 
-print(result1, result2)
+print(result1)
+print(result2)
+"""   
+
+# 1415 가장 큰 수
+"""
+num = list(map(int, input().split()))
+result1 = 0
+result2 = 0
+
+for i in num:
+    if(i%2==0 and i>result1):
+        result1 = i
+    elif(i%2!=0 and i>result2):
+        result2 = i
+
+print(result1)
+print(result2)
+"""
+# 1416 2진수 변환
+"""
+num = int(input())
+num = str(bin(num))     # 2진수를 문자열로 변환
+
+print(num[2:])      # 문자열로 변환 후 2진수의 앞에 붙는 ob 뒤부터 출력해야 하기 때문에 [2:] 시작
+"""
+# 1417 범인을 잡아라 2 10명의 키를 입력하고 3번째로 큰 키를 출력
+"""
+num = list(map(int, input().split()))
+num.sort(reverse=True)      # sort = 기본값은 오름차순으로 정렬
+                            # reverse = sort의 옵션으로 true는 내림차순으로 정렬 만약 false라면 그대로 오름차순으로 정렬
+
+print(num[2])
+"""
+# 1418 t를 찾아라 t의 문자가 문자열의 어느 순서에 있는지 출력
+"""
+string = input()
+
+for i in range(0, len(string)):
+    if(string[i] == 't'):       # 문자열이기 때문에 " "로 검색
+        print(i+1, end = " ")
+"""
+# 1419 love 2 문자열을 입력받고 그 문자열 안에 'love'라는 단어가 몇 개 들어있는지 출력
+"""
+string = input()
+count = 0
+
+for i in range(0, len(string)):
+    if(string[i:i+4] == 'love'):
+        count += 1
+
+print(count)
+"""
+# 1420 3등 찾기
+"""
+n = int(input())
+hash_record = {}
+​
+for i in range(0, n):
+    name, score = input().split()
+    hash_record[name] = int(score)
+​
+# sorted => 기존의 리스트를 새로 정렬하여 새로운 리스트를 만드는 것 True -> 내림차순 정렬 False -> 오름차순 정렬 
+
+data = sorted(hash_record.items(), key=lambda t: t[1], reverse=True)
+print(data[2][0])
 """
