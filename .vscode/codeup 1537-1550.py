@@ -5,9 +5,9 @@ n = int(input())
 
 def say():
     if n == 1:
-        return "Hello"
+        return "hello"
     elif n == 2:
-        return "World"
+        return "world"
     else:
         return "확인해주세요"
 
@@ -37,7 +37,7 @@ def boolean():
     if n == 0:
         return "false"
     else:
-        return "ture"
+        return "true"
 
 print(boolean())
 """
@@ -73,20 +73,18 @@ print(pr())
 """
 
 # 1542 함수로 prime 또는 composite 출력
-
 """
 n = int(input())
 
 def num():
-    for i in range(2, n//2):
-        if n%i==0:
-            return "composite"
-        break
+    if n != 1:
+        for i in range(2, n):
+            if n%i == 0:
+                return "composite"
     return "prime"
 
 print(num())
 """
-
 # 1543 함수로 love 출력
 
 """
