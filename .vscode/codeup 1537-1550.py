@@ -1,203 +1,138 @@
-# 1537 함수로 Hello 또는 World 출력
+# 1551 함수로 원하는 값의 위치 리턴하기 1
 
+# 내가 푼 풀이
 """
-n = int(input())
+def nm():
+    n = int(input())
+    num = list(map(int, input().split()))
+    nn = int(input())
 
-def say():
-    if n == 1:
-        return "hello"
-    elif n == 2:
-        return "world"
-    else:
-        return "확인해주세요"
+    for i in num:
+        if num[i] == nn:
+            return i+1
+    return -1
 
-print(say())
-"""
-
-# 1538 함수로 odd 또는 even 출력
-
-"""
-n = int(input())
-
-def pr():
-    if n%2 == 0:
-        return "even"
-    else:
-        return "odd"
-
-print(pr())
+print(nm())
 """
 
-# 1539 함수로 flase 또는 true 출력
-
+# 정확한 풀이
 """
-n = int(input())
-
-def boolean():
-    if n == 0:
-        return "false"
-    else:
-        return "true"
-
-print(boolean())
+def f():
+	n = int(input())
+	my_array = list(map(int, input().split()))
+	k = int(input())
+	for index, value in enumerate(my_array):        // 리스트가 있는 경우 순서와 리스트의 값을 전달하는 기능
+		if value == k:
+			return index + 1
+	return -1
 """
 
-# 1540 함수로 zero 또는 non zero 출력
-
+# 1552 함수로 소수 부분만 리턴
 """
-n = int(input())
-
-def zero():
-    if n == 0:
-        return "zero"
-    else:
-        return "non zero"
-
-print(zero())
-"""
-
-# 1541 함수로 negative/zero/postive 출력
-
-"""
-n = int(input())
-
-def pr():
-    if n<0:
-        return "negative"
-    elif n == 0:
-        return "zero"
-    else:
-        return "positive"
-
-print(pr())
-"""
-
-# 1542 함수로 prime 또는 composite 출력
-"""
-n = int(input())
-
 def num():
-    if n != 1:
-        for i in range(2, n):
-            if n%i == 0:
-                return "composite"
-    return "prime"
-
-print(num())
-"""
-# 1543 함수로 love 출력
-
-"""
-n = int(input())
-
-def love():
-    for i in range(0, n):
-        return "love\n"
-
-print(love()*n)
-"""
-
-# 1544 함수로 * n 출력
-
-"""
-n = int(input())
-
-def star():
-    for i in range(0, n):
-        return "*"
-print(star()*n)
-"""
-
-# 1545 함수로 zero 또는 non zero 출력
-
-"""
-n = int(input())
-
-def num():
-    if n == 0:
-        return "zero"
-    else:
-        return "non zero"
-
+    n = float(input())
+    m = float(n) - int(n)
+    return "%.14f"%m
 print(num())
 """
 
-# 1546 함수로 plus/ zero/ minus 판별해서 출력
-
-"""
-n = int(input())
-
-def num():
-    if n>0:
-        return "plus"
-    elif n == 0:
-        return "zero"
-    else:
-        return "minus"
-print(num())
-"""
-
-# 1547 함수로 prime /composite 판별해서 출력
-
-"""
-n  = int(input())
-
-def num():
-    for i in range(2, n//2):
-        if n%i == 0:
-            return "composite"
-            break
-    return "prime"
-
-print(num())
-"""
-
-# 1548 함수로 학점 리턴하기
-
-"""
-n = int(input())
-
-def score():
-    if n>=90 and n<=100:
-        return "A"
-    elif n>=80 and n<90:
-        return "B"
-    elif n>=70 and n<80:
-        return "C"
-    elif n>=60 and n<70:
-        return "D"
-    elif n>60:
-        return "F"
-    else:
-        return "점수를 확인해 주세요"
-
-print(score())
-"""
-
-# 1549 함수로 절대값 리턴
-
-"""
-n = int(input())
-
-def num():
-    return abs(n)
-
-print(num())
-"""
-
-# 1550 함수로 양의 제곱근의 정수 부분만 리턴
-
+# 1553 함수로 정수 올림 한 값 리턴
 """
 import math
 
-n = int(input())
+def num():
+    n = float(input())
+    m = math.ceil(n)
+    return m
+
+print(num())
+"""
+
+# 1554 함수로 정수 내림 한 값 리턴
+"""
+import math
 
 def num():
-    if n>0:
-        nn = math.sqrt(int(n))
-        return int(nn)
+    n = float(input())
+    m = math.floor(n)
+    return m
+
+print(num())
+"""
+
+# 1555 함수로 n까지의 합 리턴
+"""
+def plus():
+    n = int(input())
+    result = 0
+
+    for i in range(1, n+1):
+        result += i
+    return result
+
+print(plus())
+"""
+
+# 1556 함수로 n! 리턴
+"""
+import math
+
+def num():
+    n = int(input())
+    result = math.factorial(n)
+    return result
+print(num())
+"""
+
+# 1557 함수로 n의 약수의 개수 리턴
+"""
+def num():
+    n = int(input())
+    result = 0
+    for i in range(1, n+1):
+        if n%i == 0:
+            result += 1
+    return result
+print(num())
+"""           
+
+# 1558 함수로 정수 뒤집어 리턴
+"""
+def num():
+    n = int(input())
+    temp = ""
+
+    for i in range(len(str(n))):
+        if i==0:
+            temp += str(n%10)
+        elif i>0 and i<len(str(n))-1:
+            temp += str(n//(10**i)%10)
+        elif i == len(str(n))-1:
+            temp += str(n//(10**(len(str(n))-1)))
+    return temp
+print(num)
+"""
+
+# 1559 함수로 두 정수의 합 리턴
+"""
+def plus():
+    n, m = map(int, input().split())
+    result = n + m
+    return result
+print(plus())
+"""
+
+# 1560 함수로 두 정수의 차이 값 리턴
+"""
+def num():
+    n, m = map(int, input().split())
+    result = 0
+
+    if n>m:
+        result = n-m
     else:
-        return 0
-    
+        result = m-n
+    return result
+
 print(num())
 """
