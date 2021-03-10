@@ -1,7 +1,7 @@
 # 1526 함수로 문자열 Hello 출력
 """
 def say():
-    return "Hello"
+    return "hello"
 a = say()
 print(a)
 """
@@ -55,7 +55,7 @@ print(a)
 
 """
 def num():
-    return –2147483649
+    return -2147483649
 a = num()
 print(a)
 """
@@ -64,9 +64,9 @@ print(a)
 
 """
 def num():
-    return 3.14
+    return float(3.14)
 a = num()
-print(a)
+print("%f" % a)
 """
 
 # 1534 함수로 실수(double) 3.1415926535897 리턴하기
@@ -81,19 +81,22 @@ print(a)
 # 1535 함수로 가장 큰 값 위치 리턴하기 
 
 """
-n = list(map(int, input().split()))
-def matrix():
-    return max(n)
-a = matrix()
-print(a)
+def num():
+    result = 0
+    n = int(input())
+    m = list(map(int, input().split()))
+    return m.index(max(m))+1
+print(num())
 """
 
 # 1336 함수로 가장 작은 값 리턴하기
 
 """
-n = list(map(int, input().split()))
-def mininum():
+def num():
+    m = int(input())
+    n = list(map(int, input().split()))
+
     return min(n)
-a = mininum()
-print(a)
+
+print(num())
 """

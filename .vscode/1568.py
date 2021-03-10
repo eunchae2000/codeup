@@ -11,7 +11,7 @@ def num():
             break
         else:
             result = nm[i]
-            result = i
+            result = i+1
     return result
 
 print(num())
