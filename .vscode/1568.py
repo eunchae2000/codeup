@@ -2,16 +2,19 @@ def num():
     n = int(input())
     nm = list(map(int, input().split()))
     a, b = map(int, input().split())
-    result = 0
+    result = nm[a]
+    s = 0
 
     for i in range(a-1, b):
-        if result < nm[i]:
-            result = nm[i]
-            result = i+1
-            break
+        if result < int(nm[i]):
+            result = int(nm[i])
+            s = i+1
         else:
-            result = nm[i]
-            result = i+1
-    return result
+            result = int(nm[i])
+            if(result == int(nm[i])):
+                s = i
+            else:
+                s = i
+    return s
 
 print(num())
