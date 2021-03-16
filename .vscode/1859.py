@@ -1,3 +1,5 @@
+# 방법 1
+"""
 n = int(input())
 
 def g(n):
@@ -13,3 +15,15 @@ def f(n):
     g(n)
     print()
 f(n)
+"""
+
+# 방법 2
+"""
+n = int(input())
+
+def star(n):
+    if n>0:
+        star(n-1)
+        print("*"*n)
+star(n)
+"""

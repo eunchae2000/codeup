@@ -1,8 +1,8 @@
-a = int(input())
+n = int(input())
 
 def num(n):
     if (n<=1):
         return 1
-    return n + num(n-1)
-
-print(num(a))
+    return n * (n+1) // 2
+result = num(n)
+print(result)
